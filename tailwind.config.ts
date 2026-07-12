@@ -20,12 +20,24 @@ const config: Config = {
           hover: "rgb(var(--accent-hover) / <alpha-value>)",
           ink: "rgb(var(--accent-ink) / <alpha-value>)",
         },
+        cyan: "rgb(var(--cyan) / <alpha-value>)",
+        lime: "rgb(var(--lime) / <alpha-value>)",
       },
-      maxWidth: {
-        content: "76rem",
+      maxWidth: { content: "80rem" },
+      letterSpacing: { tightest: "-0.045em" },
+      keyframes: {
+        float: {
+          "0%,100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" },
+        },
       },
-      letterSpacing: {
-        tightest: "-0.04em",
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        shimmer: "shimmer 6s linear infinite",
       },
     },
   },
