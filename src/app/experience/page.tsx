@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 const clubPhotos = [
-  { src: "/clubs/photo1.svg", caption: "Clovis Community College MESA / Engineering clubs" },
-  { src: "/clubs/photo2.svg", caption: "Engineering Club work session in the lab" },
+  { src: "/clubs/photo1.jpg", caption: "Engineering Renaissance × MESA & MEDLIFE — our prosthetic arm team at the showcase" },
+  { src: "/clubs/photo2.jpg", caption: "Engineering Club work session in the lab" },
 ];
 
 export default function ExperiencePage() {
