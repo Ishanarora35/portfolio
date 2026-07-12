@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import ScrollProgress from "@/components/ScrollProgress";
 import { site } from "@/data/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -61,6 +62,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-screen flex-col font-sans selection:bg-accent/30">
+        <ScrollProgress />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
