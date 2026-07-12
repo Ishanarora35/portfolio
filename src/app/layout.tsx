@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     "Ishan Arora",
     "Software Engineer",
     "Computer Science",
-    "Portfolio",
+    "Robotics",
     "Embedded Systems",
+    "Portfolio",
     "Next.js",
-    "React",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Light is the default. Add `.dark` before paint only if the user chose it.
+// Dark is the default. Add `.light` before paint only if the user chose it.
 const themeScript = `
   try {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
     }
   } catch (e) {}
 `;
@@ -60,7 +60,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="flex min-h-screen flex-col font-sans selection:bg-accent/20">
+      <body className="flex min-h-screen flex-col font-sans selection:bg-accent/30">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
