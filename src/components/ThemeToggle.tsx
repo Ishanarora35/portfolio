@@ -4,23 +4,21 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 /**
- * Dark-by-default theme toggle.
- * Persists choice in-memory + on <html> class. No external storage needed;
- * the inline script in layout.tsx sets the initial class before paint.
+ * Light-by-default theme toggle. Flips the `.dark` class on <html> and
+ * remembers the choice. The inline script in layout.tsx applies it before paint.
  */
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   useEffect(() => {
-    const isLight = document.documentElement.classList.contains("light");
-    setTheme(isLight ? "light" : "dark");
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
   }, []);
 
   function toggle() {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    const root = document.documentElement;
-    root.classList.toggle("light", next === "light");
+    document.documentElement.classList.toggle("dark", next === "dark");
     try {
       window.localStorage.setItem("theme", next);
     } catch {
@@ -32,7 +30,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-surface-border text-slate-300 transition-colors hover:border-accent/60 hover:text-white"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-accent/50 hover:text-ink"
     >
       {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
     </button>

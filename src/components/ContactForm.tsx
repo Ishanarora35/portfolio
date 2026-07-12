@@ -24,13 +24,13 @@ export default function ContactForm() {
   }
 
   const field =
-    "w-full rounded-lg border border-surface-border bg-surface px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
+    "w-full rounded-xl border border-line bg-base px-4 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm text-slate-400">
+          <label htmlFor="name" className="mb-1.5 block text-sm text-muted">
             Name
           </label>
           <input
@@ -44,7 +44,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm text-slate-400">
+          <label htmlFor="email" className="mb-1.5 block text-sm text-muted">
             Email
           </label>
           <input
@@ -59,7 +59,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm text-slate-400">
+        <label htmlFor="message" className="mb-1.5 block text-sm text-muted">
           Message
         </label>
         <textarea
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base"
       >
         {sent ? (
           <>

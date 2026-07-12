@@ -25,17 +25,18 @@ export function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mb-10 max-w-2xl">
+    <div className="mb-12 max-w-2xl">
       {eyebrow && (
-        <p className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+        <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="h-px w-6 bg-accent/50" />
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl dark:text-white">
+      <h2 className="text-3xl font-bold tracking-tightest text-ink sm:text-[2.75rem] sm:leading-[1.05]">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-slate-400">{description}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted">{description}</p>
       )}
     </div>
   );

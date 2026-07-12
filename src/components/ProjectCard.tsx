@@ -5,10 +5,10 @@ import { type Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-surface-border bg-surface-raised transition-colors duration-200 hover:border-accent/50">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-ink/5">
       <Link
         href={`/projects/${project.slug}`}
-        className="relative block aspect-[16/9] overflow-hidden bg-surface"
+        className="relative block aspect-[16/9] overflow-hidden bg-card2"
       >
         <Image
           src={project.image}
@@ -19,14 +19,14 @@ export default function ProjectCard({ project }: { project: Project }) {
         />
       </Link>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="mb-2 flex items-center gap-2 text-xs text-slate-500">
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-2 flex items-center gap-2 text-xs font-medium text-muted">
           <span>{project.category}</span>
           <span aria-hidden>·</span>
           <span>{project.year}</span>
         </div>
 
-        <h3 className="text-lg font-semibold text-white">
+        <h3 className="text-lg font-semibold tracking-tight text-ink">
           <Link
             href={`/projects/${project.slug}`}
             className="transition-colors hover:text-accent"
@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </Link>
         </h3>
 
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
           {project.summary}
         </p>
 
@@ -43,22 +43,22 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="rounded-md bg-surface px-2 py-0.5 text-xs text-slate-400"
+              className="rounded-full bg-card2 px-2.5 py-0.5 text-xs text-muted"
             >
               {tech}
             </span>
           ))}
           {project.technologies.length > 4 && (
-            <span className="rounded-md bg-surface px-2 py-0.5 text-xs text-slate-500">
+            <span className="rounded-full bg-card2 px-2.5 py-0.5 text-xs text-muted">
               +{project.technologies.length - 4}
             </span>
           )}
         </div>
 
-        <div className="mt-5 flex items-center gap-4 border-t border-surface-border pt-4 text-sm">
+        <div className="mt-5 flex items-center gap-4 border-t border-line pt-4 text-sm">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-light"
+            className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover"
           >
             Learn More <ArrowUpRight size={14} />
           </Link>
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-slate-400 hover:text-white"
+              className="inline-flex items-center gap-1 text-muted hover:text-ink"
             >
               <Github size={14} /> Code
             </a>
@@ -77,7 +77,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-slate-400 hover:text-white"
+              className="inline-flex items-center gap-1 text-muted hover:text-ink"
             >
               <ExternalLink size={14} /> Demo
             </a>

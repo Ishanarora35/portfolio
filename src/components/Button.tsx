@@ -4,12 +4,10 @@ import { type ReactNode } from "react";
 type Variant = "primary" | "secondary" | "ghost";
 
 const styles: Record<Variant, string> = {
-  primary:
-    "bg-accent text-white hover:bg-accent-dark shadow-sm shadow-accent/20",
+  primary: "bg-accent text-accent-ink hover:bg-accent-hover",
   secondary:
-    "border border-surface-border bg-surface-raised text-slate-200 hover:border-accent/60 hover:text-white",
-  ghost:
-    "text-slate-300 hover:text-white hover:bg-surface-raised",
+    "border border-line bg-card text-ink hover:border-accent/50 hover:bg-card2",
+  ghost: "text-muted hover:text-ink hover:bg-card2",
 };
 
 type Props = {
@@ -28,7 +26,7 @@ export default function Button({
   className = "",
 }: Props) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface";
+    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base";
   const cls = `${base} ${styles[variant]} ${className}`;
 
   if (external) {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { nav, site } from "@/data/site";
+import { nav } from "@/data/site";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
@@ -12,14 +12,14 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-surface-border/60 bg-surface/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line/70 bg-base/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight text-white"
+          className="text-base font-bold tracking-tight text-ink"
           onClick={() => setOpen(false)}
         >
-          Ishan<span className="text-accent">.</span>
+          Ishan Arora<span className="text-accent">.</span>
         </Link>
 
         {/* Desktop nav */}
@@ -33,10 +33,8 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-lg px-3 py-2 text-sm transition-colors ${
-                  active
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
+                className={`rounded-full px-3.5 py-2 text-sm transition-colors ${
+                  active ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >
                 {item.label}
@@ -55,7 +53,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-surface-border text-slate-300"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -64,14 +62,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-surface-border/60 md:hidden">
+        <div className="border-t border-line/70 md:hidden">
           <div className="mx-auto flex max-w-content flex-col px-6 py-2">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-surface-raised hover:text-white"
+                className="rounded-lg px-3 py-3 text-sm text-muted hover:bg-card2 hover:text-ink"
               >
                 {item.label}
               </Link>
