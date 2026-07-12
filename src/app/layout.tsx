@@ -40,11 +40,12 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Set the theme class before paint to avoid a flash.
+// Light is the default. Add `.dark` before paint only if the user chose it.
 const themeScript = `
   try {
-    var t = localStorage.getItem('theme');
-    if (t === 'light') document.documentElement.classList.add('light');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
   } catch (e) {}
 `;
 
@@ -58,7 +59,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="flex min-h-screen flex-col font-sans">
+      <body className="flex min-h-screen flex-col font-sans selection:bg-accent/20">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -54,7 +54,7 @@ export default function Home() {
           {primarySkills.map((group, i) => (
             <Reveal key={group.category} delay={i * 0.05}>
               <div>
-                <h3 className="mb-3 text-sm font-medium text-slate-300">
+                <h3 className="mb-3 text-sm font-medium text-muted">
                   {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -100,15 +100,15 @@ export default function Home() {
             },
           ].map((card, i) => (
             <Reveal key={card.label} delay={i * 0.05}>
-              <div className="h-full rounded-xl border border-surface-border bg-surface-raised p-5">
+              <div className="h-full rounded-xl border border-line bg-card p-5">
                 <card.icon className="mb-3 text-accent" size={20} />
-                <p className="text-xs uppercase tracking-wide text-slate-500">
+                <p className="text-xs uppercase tracking-wide text-muted">
                   {card.label}
                 </p>
-                <p className="mt-1 text-sm font-medium text-white">
+                <p className="mt-1 text-sm font-medium text-ink">
                   {card.value}
                 </p>
-                <p className="mt-1 text-sm text-slate-400">{card.sub}</p>
+                <p className="mt-1 text-sm text-muted">{card.sub}</p>
               </div>
             </Reveal>
           ))}
@@ -123,11 +123,11 @@ export default function Home() {
       {/* Contact CTA */}
       <Section className="py-16">
         <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-surface-border bg-surface-raised px-6 py-12 text-center sm:px-12">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          <div className="overflow-hidden rounded-2xl border border-line bg-card px-6 py-12 text-center sm:px-12">
+            <h2 className="text-2xl font-bold text-ink sm:text-3xl">
               Let&apos;s work together
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-slate-400">
+            <p className="mx-auto mt-3 max-w-xl text-muted">
               I&apos;m looking for software engineering internships and always
               happy to talk about interesting projects.
             </p>
