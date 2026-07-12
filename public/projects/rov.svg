@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="MATE ROV underwater robot communications">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0a1f33"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g3)"/>
+  <g opacity="0.35" stroke="#38bdf8" stroke-width="1.5" fill="none">
+    <path d="M0 90 Q200 60 400 90 T800 90"/>
+    <path d="M0 130 Q200 100 400 130 T800 130"/>
+  </g>
+  <g>
+    <rect x="330" y="200" width="140" height="80" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2.5"/>
+    <circle cx="365" cy="240" r="14" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="435" cy="240" r="14" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <rect x="315" y="215" width="12" height="50" rx="4" fill="#334155"/>
+    <rect x="473" y="215" width="12" height="50" rx="4" fill="#334155"/>
+    <path d="M400 200 L400 90" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6 6"/>
+  </g>
+  <g fill="#38bdf8"><circle cx="400" cy="150" r="4"/><circle cx="400" cy="120" r="4" opacity="0.7"/><circle cx="400" cy="180" r="4" opacity="0.5"/></g>
+  <text x="60" y="405" fill="#64748b" font-family="monospace" font-size="20">Python · MQTT · Real-Time Robotics</text>
+</svg>

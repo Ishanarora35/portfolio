@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Myoelectric bionic prosthesis">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <g stroke="#3b82f6" stroke-width="2.5" fill="none" opacity="0.9">
+    <path d="M300 340 L300 210 Q300 190 320 190 L330 120"/>
+    <path d="M340 345 L340 200 Q340 180 360 180 L370 105"/>
+    <path d="M382 345 L382 200 Q382 180 402 180 L410 110"/>
+    <path d="M424 340 L424 205 Q424 185 444 185 L450 130"/>
+    <path d="M300 340 Q360 375 460 345 L470 250 Q420 235 300 245 Z" opacity="0.5" fill="#3b82f6" stroke="none"/>
+  </g>
+  <g fill="#3b82f6">
+    <circle cx="330" cy="120" r="6"/><circle cx="370" cy="105" r="6"/>
+    <circle cx="410" cy="110" r="6"/><circle cx="450" cy="130" r="6"/>
+  </g>
+  <path d="M120 300 L160 300 L175 250 L195 350 L215 275 L230 300 L270 300" stroke="#60a5fa" stroke-width="3" fill="none" opacity="0.8"/>
+  <text x="60" y="405" fill="#64748b" font-family="monospace" font-size="20">EMG · ESP32 · 3D-Printed Bionic Hand</text>
+</svg>

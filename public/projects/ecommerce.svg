@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="E-commerce pet supplies store">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g4)"/>
+  <g>
+    <rect x="300" y="150" width="200" height="150" rx="14" fill="#1e293b" stroke="#3b82f6" stroke-width="2.5"/>
+    <path d="M335 195 h130 l-14 70 h-102 z" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <path d="M335 195 l-14 -22 h-24" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="360" cy="285" r="9" fill="#3b82f6"/>
+    <circle cx="440" cy="285" r="9" fill="#3b82f6"/>
+  </g>
+  <g stroke="#334155" stroke-width="2" fill="none">
+    <path d="M150 330 q30 -30 60 0" /><path d="M590 330 q30 -30 60 0"/>
+  </g>
+  <text x="60" y="405" fill="#64748b" font-family="monospace" font-size="20">Web Dev · Marketing · Entrepreneurship</text>
+</svg>
