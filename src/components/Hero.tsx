@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Github, Linkedin } from "lucide-react";
+import { ArrowRight, FileText, Github, Linkedin, ChevronDown } from "lucide-react";
 import Button from "./Button";
 import Section from "./Section";
 import { site } from "@/data/site";
@@ -10,63 +10,79 @@ import { site } from "@/data/site";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden border-b border-line/70">
-      <div aria-hidden className="bg-grid pointer-events-none absolute inset-0 opacity-70" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-32 -right-16 h-96 w-96 rounded-full bg-accent/10 blur-[130px]"
-      />
+      {/* Layered backdrop: line grid + drifting color orbs + signal waves */}
+      <div aria-hidden className="bg-lines pointer-events-none absolute inset-0" />
+      <div aria-hidden className="pointer-events-none absolute -top-40 -left-24 h-[28rem] w-[28rem] rounded-full bg-accent/20 blur-[140px]" />
+      <div aria-hidden className="pointer-events-none absolute top-10 right-0 h-[26rem] w-[26rem] rounded-full bg-cyan/15 blur-[150px]" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-40 left-1/3 h-[24rem] w-[24rem] rounded-full bg-lime/10 blur-[150px]" />
 
-      <Section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
-          {/* Left: copy */}
+      {/* Animated signal waves */}
+      <svg aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-40 w-full opacity-40" preserveAspectRatio="none" viewBox="0 0 1200 160">
+        <motion.path
+          d="M0 110 Q 150 60 300 110 T 600 110 T 900 110 T 1200 110"
+          fill="none" stroke="rgb(var(--cyan))" strokeWidth="1.5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.8 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+        />
+        <motion.path
+          d="M0 130 Q 150 90 300 130 T 600 130 T 900 130 T 1200 130"
+          fill="none" stroke="rgb(var(--accent))" strokeWidth="1.5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.6 }}
+          transition={{ duration: 2.4, ease: "easeInOut", delay: 0.2 }}
+        />
+      </svg>
+
+      <Section className="relative pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3.5 py-1.5 text-xs font-medium text-muted"
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-card/70 px-3.5 py-1.5 text-xs font-medium text-muted backdrop-blur"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime/70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime" />
               </span>
               Available for software engineering internships
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-accent"
+              className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-cyan"
             >
-              {site.location}
+              {site.location} · CS Student &amp; Builder
             </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
-              className="text-6xl font-bold leading-[0.92] tracking-tightest text-ink sm:text-8xl"
+              transition={{ duration: 0.7, delay: 0.05 }}
+              className="text-6xl font-bold leading-[0.9] tracking-tightest sm:text-8xl"
             >
-              Ishan
+              <span className="text-ink">Ishan</span>
               <br />
-              Arora
-              <span className="text-accent">.</span>
+              <span className="text-gradient">Arora.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.12 }}
-              className="mt-6 max-w-xl text-lg font-medium text-ink"
+              transition={{ duration: 0.6, delay: 0.14 }}
+              className="mt-7 max-w-xl text-xl font-semibold text-ink sm:text-2xl"
             >
-              {site.role}
+              Engineering the future: code, circuits, and real-world impact.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-4 max-w-xl text-base leading-relaxed text-muted"
             >
               {site.intro}
@@ -75,11 +91,11 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.24 }}
+              transition={{ duration: 0.6, delay: 0.26 }}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
               <Button href="/projects">
-                View Projects <ArrowRight size={16} />
+                Explore the Build <ArrowRight size={16} />
               </Button>
               <Button href="/resume" variant="secondary">
                 <FileText size={16} /> Resume
@@ -93,18 +109,15 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: large portrait */}
+          {/* Portrait with animated frame */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
             className="relative mx-auto w-full max-w-sm lg:max-w-none"
           >
-            <div
-              aria-hidden
-              className="absolute -inset-3 -z-10 rounded-[28px] bg-accent/10 blur-2xl"
-            />
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-card shadow-xl shadow-ink/5">
+            <div aria-hidden className="absolute -inset-4 -z-10 rounded-[32px] bg-gradient-to-tr from-accent/30 via-cyan/20 to-lime/20 blur-2xl" />
+            <div className="animate-float relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-card shadow-2xl shadow-accent/10">
               <Image
                 src={site.headshot}
                 alt="Ishan Arora"
@@ -113,9 +126,20 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-base/60 via-transparent to-transparent" />
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="mt-14 flex items-center gap-2 text-xs uppercase tracking-widest text-muted"
+        >
+          <ChevronDown className="animate-bounce text-cyan" size={16} />
+          Scroll to explore
+        </motion.div>
       </Section>
     </div>
   );
