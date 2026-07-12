@@ -10,22 +10,21 @@ import { site } from "@/data/site";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden border-b border-line/70">
-      {/* Subtle dotted texture + soft accent wash */}
       <div aria-hidden className="bg-grid pointer-events-none absolute inset-0 opacity-70" />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-accent/10 blur-[120px]"
+        className="pointer-events-none absolute -top-32 -right-16 h-96 w-96 rounded-full bg-accent/10 blur-[130px]"
       />
 
-      <Section className="relative pt-16 pb-16 sm:pt-24 sm:pb-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_1fr]">
+      <Section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
           {/* Left: copy */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3.5 py-1.5 text-xs font-medium text-muted"
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3.5 py-1.5 text-xs font-medium text-muted"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
@@ -34,20 +33,32 @@ export default function Hero() {
               Available for software engineering internships
             </motion.div>
 
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-accent"
+            >
+              {site.location}
+            </motion.p>
+
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="max-w-3xl text-4xl font-bold leading-[1.03] tracking-tightest text-ink sm:text-6xl"
+              className="text-6xl font-bold leading-[0.92] tracking-tightest text-ink sm:text-8xl"
             >
-              Hi, I&apos;m Ishan Arora
+              Ishan
+              <br />
+              Arora
+              <span className="text-accent">.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12 }}
-              className="mt-5 max-w-2xl text-lg font-medium text-ink"
+              className="mt-6 max-w-xl text-lg font-medium text-ink"
             >
               {site.role}
             </motion.p>
@@ -56,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
-              className="mt-4 max-w-2xl text-base leading-relaxed text-muted"
+              className="mt-4 max-w-xl text-base leading-relaxed text-muted"
             >
               {site.intro}
             </motion.p>
@@ -65,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.24 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-9 flex flex-wrap items-center gap-3"
             >
               <Button href="/projects">
                 View Projects <ArrowRight size={16} />
@@ -82,19 +93,23 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: photo */}
+          {/* Right: large portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="mx-auto w-full max-w-xs lg:max-w-none"
+            className="relative mx-auto w-full max-w-sm lg:max-w-none"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-card shadow-sm">
+            <div
+              aria-hidden
+              className="absolute -inset-3 -z-10 rounded-[28px] bg-accent/10 blur-2xl"
+            />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-card shadow-xl shadow-ink/5">
               <Image
                 src={site.headshot}
                 alt="Ishan Arora"
                 fill
-                sizes="(max-width: 1024px) 320px, 400px"
+                sizes="(max-width: 1024px) 384px, 460px"
                 className="object-cover"
                 priority
               />
