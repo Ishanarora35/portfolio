@@ -14,7 +14,7 @@ export const site = {
   // Resume PDF lives in /public. Swap the file to update it everywhere.
   resume: "/resume.pdf",
   // Hero photo. Drop a real photo at public/headshot.jpg (or .png) and update this path.
-  headshot: "/headshot.svg",
+  headshot: "/headshot.jpg",
   location: "Fresno, California",
   tagline:
     "Computer Science student building software, robotics, and embedded systems, and looking for internship opportunities.",
