@@ -35,21 +35,27 @@ export default function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
         <Reveal>
           <div className="space-y-8">
-            <Block title="Background">
+            <Block title="Why Computer Science">
               <p>
-                My name is Ishan Arora, and I&apos;m a Computer Science student
-                driven by a genuine curiosity for how things work — from the
-                software that runs our lives to the embedded systems that bridge
-                code and the physical world. I care about building things that
-                are useful, and I like problems that sit at the intersection of
-                several disciplines.
+                I chose Computer Science because it sits right where curiosity
+                meets impact — it lets me take an idea and turn it into something
+                real that people can actually use. I&apos;m especially drawn to
+                the point where software meets hardware: writing code that reads
+                a muscle signal, moves a motor, or lets a robot talk to its
+                operator is the kind of problem that keeps me hooked.
               </p>
+            </Block>
+
+            <Block title="What I Enjoy Building">
               <p>
-                Outside of coursework, I&apos;ve founded and run a small
-                e-commerce business, led clubs, competed in international
-                robotics, published honors research, and volunteered 100+ hours
-                serving my community. I try to bring the same curiosity and
-                follow-through to everything I take on.
+                I like projects that combine several disciplines. As software
+                lead on a low-cost myoelectric prosthetic hand, I built the
+                signal-processing and motor-control pipeline that turns forearm
+                muscle (EMG) signals into finger movement. On our MATE ROV team I
+                built the MQTT communication layer that lets operators control an
+                underwater robot in real time. Alongside the hardware work, I
+                enjoy full-stack projects and research — like my honors study on
+                how algorithms shape political polarization.
               </p>
             </Block>
 
@@ -68,25 +74,13 @@ export default function AboutPage() {
               </p>
             </Block>
 
-            <Block title="Technical Interests">
-              <p>
-                I&apos;m most excited by software engineering, artificial
-                intelligence, embedded systems, and the kind of full-stack work
-                that turns an idea into something people can actually use. My
-                honors research on algorithmic systems and my work as software
-                lead on a myoelectric prosthetic both reflect that pull toward
-                systems that connect computation to real human impact.
-              </p>
-            </Block>
-
             <Block title="Current Goals & What I'm Learning">
               <p>
                 Right now I&apos;m focused on landing a software engineering
                 internship, transferring successfully to UC Merced, and
-                deepening my skills in modern web development, data structures
-                and algorithms, and machine learning. I&apos;m currently
-                sharpening my TypeScript and React, exploring ML fundamentals,
-                and continuing to build projects that stretch me.
+                strengthening my fundamentals — Python, C++, and data structures
+                and algorithms — while continuing to build embedded and
+                full-stack projects that stretch me.
               </p>
             </Block>
 
@@ -115,7 +109,7 @@ export default function AboutPage() {
                   ["School", "Clovis Community College (Honors)"],
                   ["Transferring to", "UC Merced — CS & Engineering"],
                   ["GPA", "3.71 · Dean's List"],
-                  ["Focus", "Software · AI · Embedded"],
+                  ["Focus", "Software · Robotics · Embedded"],
                   ["Status", "Seeking internships"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4">
