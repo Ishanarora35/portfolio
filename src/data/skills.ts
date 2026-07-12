@@ -8,31 +8,21 @@ export type SkillGroup = { category: string; items: string[] };
 export const skills: SkillGroup[] = [
   {
     category: "Programming Languages",
-    items: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "SQL"],
+    items: ["Python", "C++", "C"],
   },
   {
-    category: "Frameworks",
-    items: ["React", "Next.js", "Node.js", "Arduino"],
-  },
-  {
-    category: "Frontend",
-    items: ["HTML", "CSS", "Tailwind CSS", "Responsive Design", "Framer Motion"],
-  },
-  {
-    category: "Backend",
-    items: ["REST APIs", "MQTT", "Node.js"],
-  },
-  {
-    category: "Databases",
-    items: ["SQL", "SQLite"],
+    category: "Embedded Systems",
+    items: [
+      "ESP32",
+      "Arduino",
+      "sEMG / EMG Signal Processing",
+      "Servo Control",
+      "Sensor Integration",
+    ],
   },
   {
     category: "Cloud & Deployment",
     items: ["Vercel", "Git", "GitHub"],
-  },
-  {
-    category: "Embedded Systems",
-    items: ["ESP32", "sEMG / EMG Signal Processing", "Servo Control", "Sensor Integration"],
   },
   {
     category: "Developer Tools",
