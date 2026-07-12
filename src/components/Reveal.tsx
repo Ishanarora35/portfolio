@@ -3,24 +3,35 @@
 import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
-type Props = {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
+type Dir = "up" | "down" | "left" | "right" | "scale";
+
+const offset: Record<Dir, { x?: number; y?: number; scale?: number }> = {
+  up: { y: 24 },
+  down: { y: -24 },
+  left: { x: 40 },
+  right: { x: -40 },
+  scale: { scale: 0.94 },
 };
 
-/**
- * Subtle fade-and-rise on scroll into view.
- * Respects reduced-motion via Framer Motion defaults.
- */
-export default function Reveal({ children, delay = 0, className = "" }: Props) {
+export default function Reveal({
+  children,
+  delay = 0,
+  dir = "up",
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  dir?: Dir;
+  className?: string;
+}) {
+  const from = offset[dir];
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      initial={{ opacity: 0, ...from }}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-70px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
