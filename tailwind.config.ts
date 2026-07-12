@@ -5,9 +5,7 @@ const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-      },
+      fontFamily: { sans: ["var(--font-inter)", "system-ui", "sans-serif"] },
       colors: {
         base: "rgb(var(--bg) / <alpha-value>)",
         card: "rgb(var(--card) / <alpha-value>)",
@@ -26,18 +24,14 @@ const config: Config = {
       maxWidth: { content: "80rem" },
       letterSpacing: { tightest: "-0.045em" },
       keyframes: {
-        float: {
-          "0%,100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "0% 50%" },
-          "100%": { backgroundPosition: "200% 50%" },
-        },
+        float: { "0%,100%": { transform: "translateY(0px)" }, "50%": { transform: "translateY(-14px)" } },
+        shimmer: { "0%": { backgroundPosition: "0% 50%" }, "100%": { backgroundPosition: "200% 50%" } },
+        marquee: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 6s linear infinite",
+        marquee: "marquee 32s linear infinite",
       },
     },
   },
