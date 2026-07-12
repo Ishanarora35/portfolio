@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560" role="img" aria-label="Photo placeholder">
+  <defs><linearGradient id="h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef2ff"/><stop offset="1" stop-color="#e0e7ff"/></linearGradient></defs>
+  <rect width="480" height="560" fill="url(#h)"/>
+  <circle cx="240" cy="215" r="90" fill="#c7d2fe"/>
+  <path d="M90 520 q0 -150 150 -150 t150 150 z" fill="#c7d2fe"/>
+  <text x="240" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#4f46e5">IA</text>
+  <text x="240" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#6366f1">Add your photo → public/headshot.jpg</text>
+</svg>
