@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, GraduationCap, MapPin, Mail } from "lucide-react";
 import Hero from "@/components/Hero";
 import Section, { SectionHeading } from "@/components/Section";
@@ -8,11 +7,9 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import { featuredProjects } from "@/data/projects";
 import { skills } from "@/data/skills";
-import { experience } from "@/data/experience";
-import { site } from "@/data/site";
+import { site, now, journey } from "@/data/site";
 
 export default function Home() {
-  const eduGroup = experience.find((g) => g.id === "education");
   const primarySkills = skills.slice(0, 4);
 
   return (
@@ -42,13 +39,63 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Skills */}
+      {/* Currently */}
+      <Section className="py-16">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+          <Reveal>
+            <SectionHeading eyebrow="Now" title="What I'm working on" />
+          </Reveal>
+          <Reveal delay={0.05}>
+            <ul className="space-y-4">
+              {now.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl border border-line bg-card p-4"
+                >
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                  <span className="text-sm leading-relaxed text-ink">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Journey timeline */}
       <Section className="py-16">
         <Reveal>
           <SectionHeading
-            eyebrow="Skills"
-            title="Technologies I work with"
+            eyebrow="Journey"
+            title="How I got here"
+            description="A quick timeline of my academic and project journey so far."
           />
+        </Reveal>
+        <ol className="relative border-l border-line pl-6">
+          {journey.map((item, i) => (
+            <Reveal key={i} delay={i * 0.04}>
+              <li className="mb-9 last:mb-0">
+                <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border-2 border-accent bg-base" />
+                <div className="flex flex-wrap items-baseline gap-x-3">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                    {item.year}
+                  </span>
+                  <h3 className="text-base font-semibold text-ink">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-muted">
+                  {item.detail}
+                </p>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
+      </Section>
+
+      {/* Skills */}
+      <Section className="py-16">
+        <Reveal>
+          <SectionHeading eyebrow="Skills" title="Technologies I work with" />
         </Reveal>
         <div className="grid gap-8 sm:grid-cols-2">
           {primarySkills.map((group, i) => (
@@ -105,9 +152,7 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-wide text-muted">
                   {card.label}
                 </p>
-                <p className="mt-1 text-sm font-medium text-ink">
-                  {card.value}
-                </p>
+                <p className="mt-1 text-sm font-medium text-ink">{card.value}</p>
                 <p className="mt-1 text-sm text-muted">{card.sub}</p>
               </div>
             </Reveal>
