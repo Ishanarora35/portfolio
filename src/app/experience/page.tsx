@@ -44,17 +44,17 @@ export default function ExperiencePage() {
               {awards.map((award) => (
                 <div
                   key={award.name}
-                  className="flex gap-3 rounded-xl border border-surface-border bg-surface-raised p-5"
+                  className="flex gap-3 rounded-xl border border-line bg-card p-5"
                 >
                   <AwardIcon className="mt-0.5 shrink-0 text-accent" size={18} />
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-semibold text-white">{award.name}</h3>
-                      <span className="rounded bg-surface px-1.5 py-0.5 text-xs text-slate-400">
+                      <h3 className="font-semibold text-ink">{award.name}</h3>
+                      <span className="rounded bg-base px-1.5 py-0.5 text-xs text-muted">
                         {award.level}
                       </span>
                     </div>
-                    <p className="mt-1 text-sm text-slate-400">{award.detail}</p>
+                    <p className="mt-1 text-sm text-muted">{award.detail}</p>
                   </div>
                 </div>
               ))}
