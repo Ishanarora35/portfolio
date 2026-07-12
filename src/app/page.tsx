@@ -5,7 +5,6 @@ import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import Marquee from "@/components/Marquee";
-import BeyondAcademics from "@/components/BeyondAcademics";
 import Tilt from "@/components/Tilt";
 import { featuredProjects } from "@/data/projects";
 import { skills } from "@/data/skills";
@@ -120,19 +119,6 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Beyond Academics — cursor reveal */}
-      <Section className="py-24">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Beyond Academics"
-            title="Off the clock"
-            description="Hover to see what I'm into when I'm not building."
-          />
-        </Reveal>
-        <Reveal dir="up">
-          <BeyondAcademics />
-        </Reveal>
-      </Section>
 
       {/* Skills — interactive grid */}
       <Section className="py-24">
