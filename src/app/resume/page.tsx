@@ -28,7 +28,7 @@ export default function ResumePage() {
       </Reveal>
 
       <Reveal delay={0.05}>
-        <div className="overflow-hidden rounded-xl border border-surface-border bg-surface-raised">
+        <div className="overflow-hidden rounded-xl border border-line bg-card">
           {/* Embedded PDF viewer. Falls back to a link if the browser blocks it. */}
           <object
             data={site.resume}
@@ -36,7 +36,7 @@ export default function ResumePage() {
             className="h-[80vh] w-full"
             aria-label="Resume PDF"
           >
-            <div className="p-8 text-center text-sm text-slate-400">
+            <div className="p-8 text-center text-sm text-muted">
               Your browser can&apos;t display the embedded PDF.{" "}
               <a
                 href={site.resume}
