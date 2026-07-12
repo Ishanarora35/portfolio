@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
 
       {/* Featured Projects */}
-      <Section className="py-16">
+      <Section className="py-20">
         <Reveal>
           <SectionHeading
             eyebrow="Featured Projects"
@@ -40,7 +40,7 @@ export default function Home() {
       </Section>
 
       {/* Currently */}
-      <Section className="py-16">
+      <Section className="py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
             <SectionHeading eyebrow="Now" title="What I'm working on" />
@@ -61,39 +61,59 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Journey timeline */}
-      <Section className="py-16">
+      {/* Journey timeline — spacious two-column layout */}
+      <Section className="py-20">
         <Reveal>
           <SectionHeading
             eyebrow="Journey"
             title="How I got here"
-            description="A quick timeline of my academic and project journey so far."
+            description="A timeline of my academic and project journey so far."
           />
         </Reveal>
-        <ol className="relative border-l border-line pl-6">
-          {journey.map((item, i) => (
-            <Reveal key={i} delay={i * 0.04}>
-              <li className="mb-9 last:mb-0">
-                <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border-2 border-accent bg-base" />
-                <div className="flex flex-wrap items-baseline gap-x-3">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-                    {item.year}
-                  </span>
-                  <h3 className="text-base font-semibold text-ink">
-                    {item.title}
-                  </h3>
+
+        <div className="relative mt-4">
+          {/* vertical line */}
+          <div
+            aria-hidden
+            className="absolute left-[7px] top-2 bottom-2 w-px bg-line md:left-1/2"
+          />
+          <div className="space-y-12 md:space-y-16">
+            {journey.map((item, i) => (
+              <Reveal key={i} delay={i * 0.04}>
+                <div
+                  className={`relative grid gap-4 md:grid-cols-2 md:gap-12 ${
+                    i % 2 === 0 ? "" : "md:[&>*:first-child]:col-start-2"
+                  }`}
+                >
+                  {/* node */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-1.5 h-4 w-4 -translate-x-[0px] rounded-full border-2 border-accent bg-base md:left-1/2 md:-translate-x-1/2"
+                  />
+                  <div
+                    className={`pl-8 md:pl-0 ${
+                      i % 2 === 0 ? "md:pr-12 md:text-right" : "md:col-start-2 md:pl-12"
+                    }`}
+                  >
+                    <span className="inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-accent">
+                      {item.year}
+                    </span>
+                    <h3 className="mt-3 text-xl font-semibold tracking-tight text-ink">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {item.detail}
+                    </p>
+                  </div>
                 </div>
-                <p className="mt-1 text-sm leading-relaxed text-muted">
-                  {item.detail}
-                </p>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </Section>
 
       {/* Skills */}
-      <Section className="py-16">
+      <Section className="py-20">
         <Reveal>
           <SectionHeading eyebrow="Skills" title="Technologies I work with" />
         </Reveal>
@@ -121,7 +141,7 @@ export default function Home() {
       </Section>
 
       {/* Experience snapshot */}
-      <Section className="py-16">
+      <Section className="py-20">
         <Reveal>
           <SectionHeading eyebrow="Experience" title="Education & involvement" />
         </Reveal>
@@ -166,17 +186,17 @@ export default function Home() {
       </Section>
 
       {/* Contact CTA */}
-      <Section className="py-16">
+      <Section className="py-20">
         <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-line bg-card px-6 py-12 text-center sm:px-12">
-            <h2 className="text-2xl font-bold text-ink sm:text-3xl">
+          <div className="overflow-hidden rounded-2xl border border-line bg-card px-6 py-14 text-center sm:px-12">
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
               Let&apos;s work together
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-muted">
               I&apos;m looking for software engineering internships and always
               happy to talk about interesting projects.
             </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/contact">
                 Get in touch <ArrowRight size={16} />
               </Button>
