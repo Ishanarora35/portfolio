@@ -33,15 +33,15 @@ export default function ContactPage() {
           <div className="space-y-3">
             {links.map((link) => {
               const content = (
-                <div className="flex items-center gap-4 rounded-xl border border-surface-border bg-surface-raised p-4 transition-colors hover:border-accent/50">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface text-accent">
+                <div className="flex items-center gap-4 rounded-xl border border-line bg-card p-4 transition-colors hover:border-accent/50">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-base text-accent">
                     <link.icon size={18} />
                   </span>
                   <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-500">
+                    <p className="text-xs uppercase tracking-wide text-muted">
                       {link.label}
                     </p>
-                    <p className="text-sm font-medium text-slate-200">
+                    <p className="text-sm font-medium text-ink">
                       {link.value}
                     </p>
                   </div>
@@ -65,8 +65,8 @@ export default function ContactPage() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="rounded-xl border border-surface-border bg-surface-raised p-6 sm:p-8">
-            <h3 className="mb-5 text-lg font-semibold text-white">
+          <div className="rounded-xl border border-line bg-card p-6 sm:p-8">
+            <h3 className="mb-5 text-lg font-semibold text-ink">
               Send me a message
             </h3>
             <ContactForm />
