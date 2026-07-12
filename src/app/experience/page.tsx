@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Award as AwardIcon } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
 import Timeline from "@/components/Timeline";
@@ -8,8 +9,13 @@ import { experience, awards } from "@/data/experience";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Education, research, leadership, work, and volunteer experience of Ishan Arora.",
+    "Education, research, leadership, and volunteer experience of Ishan Arora.",
 };
+
+const clubPhotos = [
+  { src: "/clubs/photo1.svg", caption: "Clovis Community College MESA / Engineering clubs" },
+  { src: "/clubs/photo2.svg", caption: "Engineering Club work session in the lab" },
+];
 
 export default function ExperiencePage() {
   return (
@@ -18,8 +24,33 @@ export default function ExperiencePage() {
         <SectionHeading
           eyebrow="Experience"
           title="Where I've learned and led"
-          description="Education, research, leadership, work, and community service."
+          description="Education, research, leadership, and community service."
         />
+      </Reveal>
+
+      {/* Clubs & community photo strip */}
+      <Reveal>
+        <div className="mb-14 grid gap-4 sm:grid-cols-2">
+          {clubPhotos.map((photo) => (
+            <figure
+              key={photo.src}
+              className="overflow-hidden rounded-2xl border border-line bg-card"
+            >
+              <div className="relative aspect-[16/11]">
+                <Image
+                  src={photo.src}
+                  alt={photo.caption}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="px-4 py-3 text-xs text-muted">
+                {photo.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </Reveal>
 
       <div className="space-y-14">
