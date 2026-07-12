@@ -82,17 +82,6 @@ export const experience: ExperienceGroup[] = [
         ],
         tags: ["Teaching", "STEM"],
       },
-      {
-        title: "Founder & CEO",
-        org: "E-Commerce Pet Supplies Store",
-        period: "Aug 2024 – Jan 2025",
-        points: [
-          "Founded and ran an online store selling pet-cleaning supplies, coordinating a small team of friends.",
-          "Built the storefront, chose the product line, and ran advertising and social-media strategy.",
-          "Reinvested revenue into advertising to test and refine customer acquisition.",
-        ],
-        tags: ["Entrepreneurship", "Web Development", "Marketing"],
-      },
     ],
   },
   {

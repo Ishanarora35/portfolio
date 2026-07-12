@@ -150,44 +150,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ecommerce-pet-supplies",
-    title: "E-Commerce Pet Supplies Store",
-    summary:
-      "Founded and ran an online store selling pet-cleaning supplies — built the website, chose the product line, and ran the advertising and social strategy end to end.",
-    description:
-      "A solo-founded e-commerce venture where I handled everything from building the storefront to product selection, marketing, and reinvesting revenue into advertising.",
-    image: "/projects/ecommerce.svg",
-    technologies: ["Web Development", "E-Commerce", "Digital Marketing", "Entrepreneurship"],
-    featured: false,
-    category: "Entrepreneurship",
-    year: "2024",
-    role: "Founder & CEO",
-    overview:
-      "I founded and operated an online store focused on pet-cleaning supplies, primarily pet brushes. I built the storefront myself and led every part of the business, working alongside a few friends whom I coordinated.",
-    problem:
-      "Turning an idea into a live, revenue-capable store meant building the site, sourcing products, and figuring out how to actually drive traffic and convert customers — all on a small budget.",
-    solution:
-      "I built the store's website, curated the product catalog, selected advertising channels and social platforms, and ran the campaigns. Revenue from each sale was reinvested into advertising to test what worked.",
-    features: [
-      "Custom-built storefront",
-      "Curated product catalog focused on a clear niche",
-      "Paid advertising and social-media traffic strategy",
-      "Revenue reinvestment loop to test and scale ad spend",
-    ],
-    challenges: [
-      "Acquiring customers cost-effectively as a new store with limited budget.",
-      "Balancing the venture with a full college course load.",
-    ],
-    lessons: [
-      "The realities of customer acquisition, unit economics, and marketing ROI.",
-      "End-to-end ownership: from building the product to selling it.",
-    ],
-    future: [
-      "Rebuild on a modern headless-commerce stack",
-      "Add analytics-driven inventory and ad decisions",
-    ],
-  },
-  {
     slug: "rpg-game-maps",
     title: "RPG Game — Map Design & Development",
     summary:
