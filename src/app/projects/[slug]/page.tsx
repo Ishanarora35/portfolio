@@ -48,11 +48,11 @@ function DetailBlock({
 }) {
   return (
     <div>
-      <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold text-white">
+      <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold text-ink">
         <Icon size={18} className="text-accent" />
         {title}
       </h2>
-      <div className="text-sm leading-relaxed text-slate-400">{children}</div>
+      <div className="text-sm leading-relaxed text-muted">{children}</div>
     </div>
   );
 }
@@ -82,13 +82,13 @@ export default function ProjectDetailPage({
     <Section className="py-12">
       <Link
         href="/projects"
-        className="inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-white"
+        className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink"
       >
         <ArrowLeft size={15} /> Back to projects
       </Link>
 
       <header className="mt-6">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-muted">
           <span>{project.category}</span>
           <span aria-hidden>·</span>
           <span>{project.year}</span>
@@ -99,10 +99,10 @@ export default function ProjectDetailPage({
             </>
           )}
         </div>
-        <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           {project.title}
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-400">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
           {project.description}
         </p>
 
@@ -120,7 +120,7 @@ export default function ProjectDetailPage({
         </div>
       </header>
 
-      <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-surface-border bg-surface-raised">
+      <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-line bg-card">
         <Image
           src={project.image}
           alt={project.title}
@@ -171,8 +171,8 @@ export default function ProjectDetailPage({
         </div>
 
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-xl border border-surface-border bg-surface-raised p-6">
-            <h3 className="mb-4 text-sm font-medium uppercase tracking-wide text-slate-400">
+          <div className="rounded-xl border border-line bg-card p-6">
+            <h3 className="mb-4 text-sm font-medium uppercase tracking-wide text-muted">
               Tech Stack
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -184,7 +184,7 @@ export default function ProjectDetailPage({
         </aside>
       </div>
 
-      <div className="mt-16 border-t border-surface-border pt-8">
+      <div className="mt-16 border-t border-line pt-8">
         <Button href="/projects" variant="ghost">
           <ArrowLeft size={16} /> Back to all projects
         </Button>
