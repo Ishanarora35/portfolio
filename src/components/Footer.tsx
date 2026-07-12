@@ -69,7 +69,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-line/70 pt-6">
           <p className="text-sm text-muted">
-            © {year} {site.name}. Built with Next.js &amp; Tailwind CSS.
+            &copy; {year} {site.name}. Built with Next.js, React &amp; Tailwind CSS &mdash; deployed on Vercel.
           </p>
         </div>
       </div>
