@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="mb-2 text-lg font-semibold text-white">{title}</h3>
-      <div className="space-y-3 text-sm leading-relaxed text-slate-400">
+      <h3 className="mb-2 text-lg font-semibold text-ink">{title}</h3>
+      <div className="space-y-3 text-sm leading-relaxed text-muted">
         {children}
       </div>
     </div>
@@ -105,8 +105,8 @@ export default function AboutPage() {
 
         <Reveal delay={0.1}>
           <aside className="space-y-6 lg:sticky lg:top-24">
-            <div className="rounded-xl border border-surface-border bg-surface-raised p-6">
-              <h3 className="mb-4 text-sm font-medium uppercase tracking-wide text-slate-400">
+            <div className="rounded-xl border border-line bg-card p-6">
+              <h3 className="mb-4 text-sm font-medium uppercase tracking-wide text-muted">
                 Quick facts
               </h3>
               <dl className="space-y-3 text-sm">
@@ -119,8 +119,8 @@ export default function AboutPage() {
                   ["Status", "Seeking internships"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4">
-                    <dt className="text-slate-500">{k}</dt>
-                    <dd className="text-right font-medium text-slate-200">{v}</dd>
+                    <dt className="text-muted">{k}</dt>
+                    <dd className="text-right font-medium text-ink">{v}</dd>
                   </div>
                 ))}
               </dl>
