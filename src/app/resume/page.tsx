@@ -28,28 +28,28 @@ export default function ResumePage() {
       </Reveal>
 
       <Reveal delay={0.05}>
-        <div className="overflow-hidden rounded-xl border border-line bg-card">
-          {/* Embedded PDF viewer. Falls back to a link if the browser blocks it. */}
-          <object
-            data={site.resume}
-            type="application/pdf"
-            className="h-[80vh] w-full"
-            aria-label="Resume PDF"
-          >
-            <div className="p-8 text-center text-sm text-muted">
-              Your browser can&apos;t display the embedded PDF.{" "}
-              <a
-                href={site.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:underline"
-              >
-                Download the resume instead.
-              </a>
-            </div>
-          </object>
+        <div className="overflow-hidden rounded-xl border border-line bg-white">
+          {/* Native browser PDF viewer via iframe — renders reliably across browsers. */}
+          <iframe
+            src={`${site.resume}#view=FitH`}
+            title="Ishan Arora resume"
+            className="h-[85vh] w-full"
+          />
         </div>
       </Reveal>
+
+      <p className="mt-4 text-center text-sm text-muted">
+        Can&apos;t see the resume above?{" "}
+        <a
+          href={site.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline"
+        >
+          Open it in a new tab
+        </a>
+        .
+      </p>
     </Section>
   );
 }
