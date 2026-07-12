@@ -24,8 +24,8 @@ export default function SkillsPage() {
       <div className="grid gap-6 sm:grid-cols-2">
         {skills.map((group, i) => (
           <Reveal key={group.category} delay={i * 0.04}>
-            <div className="h-full rounded-xl border border-surface-border bg-surface-raised p-6">
-              <h3 className="mb-4 text-sm font-medium text-slate-300">
+            <div className="h-full rounded-xl border border-line bg-card p-6">
+              <h3 className="mb-4 text-sm font-medium text-muted">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
